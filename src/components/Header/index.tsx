@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
-import Link from "next/link";
-import { withTranslation } from "../../../config/Next18Wrapper";
+import { useRouter } from "next/router";
+import { withTranslation, Link } from "../../../config/Next18Wrapper";
 import {
   Wrapper,
   Content,
@@ -14,21 +14,17 @@ interface IProps {
   t: (key: string) => {};
 }
 const Header: React.FC<IProps> = ({ t }): JSX.Element => {
-  const [isSticky, setSticky] = useState(false);
+  const router = useRouter();
+  const [isSticky, setSticky] = useState<boolean>(
+    typeof window !== "undefined" && window.pageYOffset < 45 ? false : true
+  );
 
   useEffect(() => {
     const handleScroll = (e) => {
-      if (window.pageYOffset < 45) {
-        setSticky(false);
-      } else {
-        setSticky(true);
-        // if (ref.current) {
-        //   setSticky(ref.current.getBoundingClientRect().top <= 0);
-        // }
-      }
+      if (window.pageYOffset < 45) setSticky(false);
+      else setSticky(true);
     };
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", () => handleScroll);
     };
@@ -44,11 +40,18 @@ const Header: React.FC<IProps> = ({ t }): JSX.Element => {
         )}
 
         <Menu>
-          <MenuItem selected={true} isSticky={isSticky}>
-            <Link href="/">{t("HEADER_MENU_ONE")}</Link>
+          <MenuItem selected={router.pathname === "/"} isSticky={isSticky}>
+            <Link href={`/`}>
+              <a>{t("HEADER_MENU_ONE")}</a>
+            </Link>
           </MenuItem>
-          <MenuItem isSticky={isSticky}>
-            <Link href="/">{t("HEADER_MENU_SECOND")}</Link>
+          <MenuItem
+            selected={router.pathname === `/spaces`}
+            isSticky={isSticky}
+          >
+            <Link href={`/spaces`}>
+              <a>{t("HEADER_MENU_SECOND")}</a>
+            </Link>
           </MenuItem>
           <MenuItem isSticky={isSticky}>
             <Link href="/">{t("HEADER_MENU_FOURTH")}</Link>

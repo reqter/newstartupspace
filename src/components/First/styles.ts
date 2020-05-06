@@ -14,11 +14,11 @@ export const Content = styled.div`
   @apply w-1150 flex m-auto;
 `;
 export const Left = styled.div`
-  @apply mt-64;
+  @apply mt-64 w-1/2;
 `;
 export const Right = styled.div`
-  @apply mt-40;
+  @apply mt-40  w-1/2;
 `;
 export const User = styled.img`
-  @apply w-4/5 m-auto;
+  @apply w-full m-auto;
 `;
