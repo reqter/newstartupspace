@@ -1,5 +1,5 @@
 import React from "react";
-import { NextPage, GetServerSideProps } from "next";
+import { NextPage, NextPageContext } from "next";
 import Head from "next/head";
 import { withTranslation } from "../../config/Next18Wrapper";
 import useSWR from "swr";
@@ -9,24 +9,29 @@ import First from "../components/First";
 import Service from "../components/Service";
 import Spaces from "../components/Spaces";
 import Cities from "../components/Cities";
+import NewsLetter from "../components/NewsLetter";
+import Blogs from "../components/Blogs";
 
 interface IProps {
-  t: (key: string) => {};
-  initialData: object;
+  t: (key: string) => string;
+  direction: string;
+  getInitialProps?: (ctx: NextPageContext) => Promise<any>;
 }
 
-const Home = ({ t }) => {
+const Home = ({}): JSX.Element => {
   // const { t, i18n } = useTranslation();
   // const { data, error } = useSWR("/api/data", getContent, { initialData });
   return (
     <MainLayout>
       <Head>
-        <title>{t("title")}</title>
+        <title>Startup-Space</title>
       </Head>
       <First />
       <Service />
       <Spaces />
       <Cities />
+      <NewsLetter />
+      <Blogs />
     </MainLayout>
   );
 };
@@ -34,7 +39,7 @@ const Home = ({ t }) => {
 Home.getInitialProps = async (context) => {
   return {};
 };
-export default withTranslation("home")(Home);
+export default Home;
 
 /* // const initialData = await getContent("/api/data");
 // header

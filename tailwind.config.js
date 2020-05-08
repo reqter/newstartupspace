@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        "1150": "72rem",
+        "1150": "73.125rem",
       },
       fontFamily: {
         vazir: [

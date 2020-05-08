@@ -1,5 +1,6 @@
 import React from "react";
 import { withTranslation } from "../../../config/Next18Wrapper";
+import Divider from "../Common/Divider";
 import {
   Wrapper,
   Content,
@@ -8,7 +9,6 @@ import {
   Right,
   Title,
   Header,
-  Divider,
   Description,
   Button,
 } from "./styles";
