@@ -3,8 +3,8 @@ import { lighten, modularScale, rgba } from "polished";
 import { currentTheme } from "./../../services/theming";
 
 export const Wrapper = styled.header`
-  @apply w-full bg-gray-100  shadow-lg transition ease-linear duration-75;
-  z-index: 20;
+  @apply w-full bg-gray-100  shadow-lg transition ease-linear duration-75 z-50;
+
   background-color: ${({ isSticky }) =>
     isSticky ? "white" : rgba(255, 255, 255, 0.2)};
   top: ${({ isSticky }) => (isSticky ? 0 : "auto")};

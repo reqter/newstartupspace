@@ -22,9 +22,6 @@ export const Title = styled.div`
 export const Header = styled.h1`
   @apply text-4xl font-bold;
 `;
-export const Divider = styled.div`
-  @apply w-12 bg-blue-500 h-1 my-8;
-`;
 export const Description = styled.p`
   @apply text-gray-600;
 `;
