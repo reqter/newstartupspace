@@ -2,11 +2,9 @@ import React from "react";
 import { Button } from "./styles";
 import Section from "../Common/Section";
 import CityList from "./CityList";
-
 const Cities = ({}) => {
   return (
     <Section
-      bgColor={theme`colors.white`}
       bgImage="/images/city.png"
       title="موقعیت"
       header="شهرهای اصلی فضای کاری"

@@ -2,7 +2,7 @@ import { styled } from "linaria/lib/react";
 import { lighten, modularScale, rgba } from "polished";
 
 export const List = styled.div`
-  @apply flex mt-8;
+  @apply flex mt-8 mis-4;
 `;
 
 export const Item = styled.div`

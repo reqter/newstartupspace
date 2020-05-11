@@ -6,7 +6,7 @@ export const Wrapper = styled.header`
   @apply w-full bg-gray-100  shadow-lg transition ease-linear duration-75 z-50;
 
   background-color: ${({ isSticky }) =>
-    isSticky ? "white" : rgba(255, 255, 255, 0.2)};
+    isSticky ? "white" : rgba(255, 255, 255, 0.1)};
   top: ${({ isSticky }) => (isSticky ? 0 : "auto")};
   position: ${({ isSticky }) => (isSticky ? "fixed" : "absolute")};
   padding: ${({ isSticky }) =>
@@ -22,7 +22,7 @@ export const Menu = styled.ul`
   @apply flex-1 flex justify-center;
 `;
 export const MenuItem = styled.li`
-  @apply font-bold px-6;
+  @apply font-bold px-6 cursor-pointer;
   color: ${({ selected, isSticky }) =>
     selected
       ? theme`colors.blue.500`

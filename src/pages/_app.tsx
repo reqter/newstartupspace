@@ -12,7 +12,12 @@ const AppComponent: React.FC<AppProps> = ({ Component, pageProps }) => {
       <Head>
         <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
       </Head>
-      <Provider initialData={{ dir: pageProps.dir }}>
+      <Provider
+        initialData={{
+          dir: pageProps.dir,
+          currentLanguage: pageProps.currentLanguage,
+        }}
+      >
         <Component {...pageProps} />
       </Provider>
     </>
@@ -24,7 +29,9 @@ AppComponent["getInitialProps"] = async ({ Component, ctx }) => {
   if (Component.getInitialProps) {
     props = await Component.getInitialProps(ctx);
   }
-  return { pageProps: { ...props, dir: i18n.dir(currentLanguage) } };
+  return {
+    pageProps: { ...props, dir: i18n.dir(currentLanguage), currentLanguage },
+  };
 };
 
 export default appWithTranslation(AppComponent);

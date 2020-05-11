@@ -2,10 +2,9 @@ import { styled } from "linaria/lib/react";
 import { lighten, modularScale, rgba } from "polished";
 
 export const Wrapper = styled.div`
+  background: ${({ bgColor, bgImage }) =>
+    bgImage ? `url(${bgImage})` : bgColor ? bgColor : theme`colors.white`};
   @apply py-20 bg-cover;
-  background-color: ${({ bgColor }) =>
-    bgColor ? bgColor : theme`colors.white`};
-  background-image: ${({ bgImage }) => (bgImage ? `url(${bgImage})` : "none")};
 `;
 export const Content = styled.div`
   @apply flex flex-col w-1150 m-auto;
