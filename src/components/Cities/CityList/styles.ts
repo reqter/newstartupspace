@@ -2,7 +2,7 @@ import { styled } from "linaria/lib/react";
 import { lighten, modularScale, rgba } from "polished";
 
 export const Container = styled.div`
-  @apply flex mt-10 flex-wrap;
+  @apply flex mt-10 flex-wrap mli-2;
 `;
 
 export const Plus = styled.div`
@@ -49,9 +49,10 @@ export const Count = styled.div`
 `;
 
 export const CardWrapper = styled.div`
-  @apply bg-white mb-4 h-64  shadow-lg rounded-lg py-40 ml-3 bg-cover overflow-hidden relative;
-  width: calc(${theme`width.1/4`} - ${theme`spacing.3`});
+  @apply mb-4 h-64  shadow-lg rounded-lg py-40 bg-cover overflow-hidden relative;
+  width: calc(${theme`width.1/4`} - 10px);
   background-image: ${({ bgUrl }) => `url(${bgUrl})`};
+  margin-inline-start: 10px;
 `;
 export const Content = styled.div`
   @apply cursor-pointer w-full h-full absolute top-0 transition duration-500;

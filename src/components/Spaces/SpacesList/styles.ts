@@ -6,6 +6,6 @@ export const Container = styled.div`
 `;
 
 export const CardWrapper = styled.div`
-  @apply bg-white mb-4 mie-4;
-  width: calc(${theme`width.1/3`} - ${theme`spacing.4`});
+  @apply bg-white mb-8 mli-4;
+  width: calc(${theme`width.1/3`} - ${theme`spacing.8`});
 `;

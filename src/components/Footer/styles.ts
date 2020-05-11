@@ -2,14 +2,14 @@ import { styled } from "linaria/lib/react";
 import { lighten, modularScale, rgba } from "polished";
 
 export const Container = styled.div`
-  @apply flex relative mb-20;
+  @apply flex relative mb-20 mli-2;
 `;
 
 export const Box = styled.div`
   @apply flex flex-col flex-1 text-white pie-5 text-gray-300;
   ul {
     @apply list-disc;
-    padding-left: 15px;
+    padding-inline-start: 15px;
     li {
       @apply py-2;
     }

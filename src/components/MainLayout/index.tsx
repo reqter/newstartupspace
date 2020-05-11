@@ -4,13 +4,18 @@ import Header from "../Header";
 import Footer from "../Footer";
 import { Main, Content } from "./styles";
 
-interface MainProps {}
-const MainComponent: React.FC<MainProps> = ({ children }): JSX.Element => {
+interface MainProps {
+  headerData: any;
+}
+const MainComponent: React.FC<MainProps> = ({
+  headerData,
+  children,
+}): JSX.Element => {
   useEffect(() => {}, []);
   return (
     <Main>
       <HeaderInfo />
-      <Header />
+      <Header data={headerData} />
       <Content>{children}</Content>
       <Footer />
     </Main>
