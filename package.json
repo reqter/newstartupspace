@@ -10,7 +10,7 @@
     "express": "^4.17.1",
     "i18next-express-middleware": "^1.9.1",
     "linaria": "1.2.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "next": "^9.3.4",
     "next-compose-plugins": "^2.2.0",
     "next-i18next": "^4.2.1",
