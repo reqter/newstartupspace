@@ -7,7 +7,7 @@
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "i18next-express-middleware": "^1.9.1",
     "linaria": "1.2.4",
     "lodash": "^4.17.15",
